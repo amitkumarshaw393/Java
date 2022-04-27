@@ -1,0 +1,45 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    String s="Let's take LeetCode contest";
+	   ArrayList<String>v1=new ArrayList<String>();
+	   
+        String str="";
+        
+
+        for(int i=s.length()-1;i>=0;i--)
+        {
+            if( Character.isWhitespace(s.charAt(i)) )
+            {
+            v1.add(str);
+            str="";
+            }
+            else if(i==0)
+            {
+            str+=s.charAt(i);
+            v1.add(str);
+            }
+            else 
+            str+=s.charAt(i);
+        }
+        Collections.reverse(v1);
+        str="";
+        for(int x=0;x<v1.size();x++)
+        {
+            if(x==v1.size()-1)
+             str+=v1.get(x);  
+             else
+             str+=v1.get(x)+" ";
+        }
+        System.out.println(str);
+    }
+		
+}
