@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main
+{
+    public static int check(int res,String str)
+    {
+        int count=0;
+        Stack<Character>v1=new Stack<Character>();
+        for(int i=0;i<str.length();i++)
+        {
+            if(v1.isEmpty())        //BGGBBGGB
+            v1.push(str.charAt(i));
+            
+            else if(v1.peek()=='G' && str.charAt(i)=='B')
+            {
+                count++;
+                v1.pop();
+            }
+            else
+            v1.push(str.charAt(i));
+        }
+        
+	   
+	   return count;
+    }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.println("Enter the length");
+	    int res=sc.nextInt();
+	    System.out.println("Enter the String");
+	    String str=sc.next();
+		System.out.println(Main.check(res,str));
+	}
+}
